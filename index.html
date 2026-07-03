@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企业午餐点餐系统</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f8a58'/%3E%3Cpath d='M9 10h14v3H9zM9 15h14v3H9zM9 20h10v3H9z' fill='white'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css?v=20260703-api-1" />
+  </head>
+  <body>
+    <div id="app" class="app-shell prices-hidden">
+      <header class="topbar">
+        <div>
+          <h1>企业午餐点餐</h1>
+          <p id="subtitle">正在载入菜品库...</p>
+        </div>
+        <div class="mode-switch" aria-label="使用模式">
+          <button class="mode-button active" id="employeeModeButton" type="button">员工点菜</button>
+          <button class="mode-button" id="adminModeButton" type="button">管理员</button>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-button" id="resetDataButton" type="button">重置演示数据</button>
+          <button class="primary-button" id="publishButtonTop" type="button">发布今日菜单</button>
+        </div>
+      </header>
+
+      <nav class="quick-nav" id="quickNav" aria-label="快捷直达">
+        <button class="quick-nav-button active" type="button" data-nav-target="recommendations">今日推荐</button>
+        <button class="quick-nav-button" type="button" data-nav-target="order">全部菜</button>
+        <button class="quick-nav-button" type="button" data-nav-target="ticket">桌台单</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="summary">账单</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="records">记录</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="publish">发布</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="library">菜品库</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="addDish">新增菜</button>
+        <button class="quick-nav-button admin-only" type="button" data-nav-target="export">导出</button>
+      </nav>
+
+      <main class="workspace">
+        <section class="panel admin-panel" aria-labelledby="adminTitle">
+          <div class="admin-login" id="adminLoginBox">
+            <h2>管理员登录</h2>
+            <p>输入管理员密码后，可发布菜单、维护菜品库和导出报单。</p>
+            <label>
+              管理员密码
+              <input id="adminPasswordInput" type="password" placeholder="请输入密码" autocomplete="current-password" />
+            </label>
+            <button class="primary-button" id="adminLoginButton" type="button">登录管理员</button>
+          </div>
+
+          <div class="admin-content" id="adminContent">
+          <div class="panel-heading" id="adminPublishArea">
+            <div>
+              <h2 id="adminTitle">管理员发布</h2>
+              <p>每天可随机生成 6 道参考菜；员工实际仍可从完整菜品库中选择。</p>
+            </div>
+            <span class="status-chip" id="selectionStatus">0 / 6</span>
+          </div>
+
+          <div class="form-grid page-section admin-page publish-page">
+            <label>
+              用餐日期
+              <input id="menuDate" type="date" />
+            </label>
+            <label>
+              截止时间
+              <input id="deadlineInput" type="time" value="10:00" />
+            </label>
+          </div>
+
+          <div class="template-row page-section admin-page publish-page" id="templateRow" aria-label="随机参考菜单">
+            <button class="template-button" id="randomMenuButton" type="button">随机生成 6 道菜</button>
+          </div>
+
+          <input id="adminDishSearch" class="admin-dish-search page-section admin-page publish-page library-page" type="search" placeholder="搜索菜品库：菜名、分类、描述" />
+          <div class="category-tabs page-section admin-page publish-page library-page" id="categoryTabs" aria-label="菜品分类"></div>
+          <div class="dish-editor page-section admin-page addDish-page" id="addDishArea">
+            <div class="section-title">新增菜品</div>
+            <div class="dish-editor-grid">
+              <label>
+                分类
+                <select id="newDishCategory"></select>
+              </label>
+              <label>
+                菜名
+                <input id="newDishName" type="text" placeholder="如：小炒黄牛肉" />
+              </label>
+              <label>
+                价格
+                <input id="newDishPrice" type="number" min="0" step="1" placeholder="元" />
+              </label>
+            </div>
+            <label>
+              描述
+              <input id="newDishDesc" type="text" placeholder="口味、做法或备注" />
+            </label>
+            <button class="secondary-button" id="addDishButton" type="button">增加菜品</button>
+          </div>
+          <div class="dish-library page-section admin-page publish-page library-page" id="dishLibrary"></div>
+
+          <div class="panel-footer page-section admin-page publish-page">
+            <button class="secondary-button" id="clearSelectionButton" type="button">清空选择</button>
+            <button class="primary-button" id="publishButton" type="button">发布今日菜单</button>
+          </div>
+          </div>
+        </section>
+
+        <section class="panel order-panel" id="orderPanel" aria-labelledby="orderTitle">
+          <div class="panel-heading">
+            <div>
+              <h2 id="orderTitle">今日菜单推荐</h2>
+              <p id="orderHint">把自己要的菜加入今日整桌订单。</p>
+            </div>
+            <span class="deadline-chip" id="deadlineStatus">截止 10:00</span>
+          </div>
+
+          <section class="recommended-section page-section employee-page recommendations-page" id="recommendedMenuSection" aria-labelledby="recommendedTitle">
+            <div class="section-title" id="recommendedTitle">今日推荐 6 道</div>
+            <div class="recommended-menu" id="recommendedMenu"></div>
+            <button class="secondary-button jump-all-dishes-button" id="otherDishesButton" type="button">想吃其他菜，一键查看全部菜</button>
+          </section>
+
+          <div class="employee-form page-section employee-page recommendations-page order-page">
+            <label>
+              姓名
+              <input id="employeeName" type="text" placeholder="请输入姓名" required />
+            </label>
+            <label>
+              部门
+              <input id="employeeDept" type="text" placeholder="如：运营部，用于区分同名" />
+            </label>
+          </div>
+
+          <div class="closed-notice page-section employee-page recommendations-page order-page" id="closedNotice">
+            <span>当前已过点餐截止时间，员工端已锁定。</span>
+            <button type="button" id="extendDeadlineButton">延长到 23:59</button>
+          </div>
+
+          <div class="employee-dish-tools page-section employee-page order-page" id="dishPickerTools">
+            <input id="employeeDishSearch" type="search" placeholder="搜索菜名，比如：牛肉、鸡、土豆" />
+            <div class="employee-category-tabs" id="employeeCategoryTabs" aria-label="员工菜品分类"></div>
+            <div class="quick-filter-tabs" id="quickFilterTabs" aria-label="快速筛选"></div>
+          </div>
+
+          <div class="table-ticket page-section employee-page ticket-page" id="tableTicket">
+            <div class="table-ticket-head">
+              <div>
+                <span class="section-kicker">今日桌台单</span>
+                <strong>只显示已点菜品</strong>
+              </div>
+              <span id="tableTicketTotal">¥0</span>
+            </div>
+            <div id="tableTicketList" class="table-ticket-list"></div>
+          </div>
+
+          <div class="today-menu page-section employee-page order-page" id="todayMenu"></div>
+          <div class="menu-more-row page-section employee-page order-page" id="menuMoreRow"></div>
+
+          <label class="remark-box page-section employee-page recommendations-page order-page">
+            忌口 / 口味备注
+            <textarea id="orderRemark" rows="4" placeholder="例如：少辣，不放香菜，米饭少一点"></textarea>
+          </label>
+
+          <div class="order-submit-row page-section employee-page recommendations-page order-page">
+            <div>
+              <span class="muted">我已表达想吃</span>
+              <strong id="orderTotal">¥0</strong>
+              <span class="save-status" id="saveStatus">尚未保存</span>
+            </div>
+            <div class="submit-actions">
+              <button class="secondary-button" id="clearCurrentOrderButton" type="button">清空选择</button>
+              <button class="primary-button" id="submitOrderButton" type="button">保存到桌台单</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel summary-panel" id="summaryPanel" aria-labelledby="summaryTitle">
+          <div class="panel-heading">
+            <div>
+              <h2 id="summaryTitle">桌台账单</h2>
+              <p>这一张就是发给饭店的整桌报单。</p>
+            </div>
+          </div>
+
+          <div class="summary-stat-grid page-section admin-page summary-page export-page" id="summaryStats">
+            <div>
+              <span>点菜人数</span>
+              <strong id="orderCount">0</strong>
+            </div>
+            <div>
+              <span>总份数</span>
+              <strong id="portionCount">0</strong>
+            </div>
+            <div>
+              <span>总金额</span>
+              <strong id="summaryTotal">¥0</strong>
+            </div>
+          </div>
+
+          <div class="summary-list page-section admin-page summary-page export-page" id="summaryList"></div>
+
+          <button class="export-button admin-only page-section admin-page export-page" id="exportButton" type="button">导出 Excel</button>
+
+          <div class="orders-box page-section admin-page records-page" id="ordersBox">
+            <div class="section-title">点菜记录</div>
+            <div id="ordersList"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <button id="backToTopButton" class="back-to-top-button" type="button" aria-label="一键到顶" title="一键到顶">↑</button>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js?v=20260703-api-1" type="module"></script>
+  </body>
+</html>

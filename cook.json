@@ -1,0 +1,915 @@
+{
+  "system_type": "企业员工午餐点餐系统",
+  "version": "v1.0",
+  "price_reference": "义乌家常菜馆堂食单份价",
+  "dish_library": [
+    {
+      "category_id": 1,
+      "category_name": "经典大荤菜",
+      "dishes": [
+        {
+          "dish_id": "D001",
+          "dish_name": "红烧肉",
+          "price": 42,
+          "unit": "份",
+          "description": "肥而不腻，咸香回甜",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D002",
+          "dish_name": "糖醋里脊",
+          "price": 38,
+          "unit": "份",
+          "description": "外酥里嫩，酸甜可口",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D003",
+          "dish_name": "红烧排骨",
+          "price": 48,
+          "unit": "份",
+          "description": "肉质软烂，酱香浓郁",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D004",
+          "dish_name": "可乐鸡翅",
+          "price": 36,
+          "unit": "份",
+          "description": "甜香入味，肉质软嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D005",
+          "dish_name": "香菇滑鸡",
+          "price": 38,
+          "unit": "份",
+          "description": "鸡肉嫩滑，香菇鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D006",
+          "dish_name": "土豆炖牛肉",
+          "price": 48,
+          "unit": "份",
+          "description": "牛肉软烂，土豆绵密",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D007",
+          "dish_name": "水煮肉片",
+          "price": 42,
+          "unit": "份",
+          "description": "肉片嫩滑，麻辣鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D008",
+          "dish_name": "酸菜鱼",
+          "price": 58,
+          "unit": "份",
+          "description": "鱼片嫩滑，酸汤开胃",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D009",
+          "dish_name": "回锅肉",
+          "price": 36,
+          "unit": "份",
+          "description": "肥而不腻，酱香微辣",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D010",
+          "dish_name": "宫保鸡丁",
+          "price": 32,
+          "unit": "份",
+          "description": "酸甜微辣，花生脆嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D011",
+          "dish_name": "红烧鱼块",
+          "price": 38,
+          "unit": "份",
+          "description": "外酥里嫩，酱香入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D012",
+          "dish_name": "红烧鸡块",
+          "price": 38,
+          "unit": "份",
+          "description": "肉质紧实，咸香入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D013",
+          "dish_name": "干锅排骨",
+          "price": 48,
+          "unit": "份",
+          "description": "焦香酥脆，麻辣入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D014",
+          "dish_name": "干锅鸡",
+          "price": 42,
+          "unit": "份",
+          "description": "鸡肉干香，越煮越入味",
+          "support_remark": true,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "category_id": 2,
+      "category_name": "家常半荤菜",
+      "dishes": [
+        {
+          "dish_id": "D101",
+          "dish_name": "鱼香肉丝",
+          "price": 26,
+          "unit": "份",
+          "description": "酸甜微辣，经典下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D102",
+          "dish_name": "青椒炒肉",
+          "price": 24,
+          "unit": "份",
+          "description": "锅气十足，鲜辣下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D103",
+          "dish_name": "木耳炒肉",
+          "price": 24,
+          "unit": "份",
+          "description": "木耳爽脆，肉片鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D104",
+          "dish_name": "蒜苔炒肉",
+          "price": 26,
+          "unit": "份",
+          "description": "蒜苔脆嫩，咸香入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D105",
+          "dish_name": "香干炒肉",
+          "price": 24,
+          "unit": "份",
+          "description": "豆香浓郁，肉片鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D106",
+          "dish_name": "木须肉",
+          "price": 26,
+          "unit": "份",
+          "description": "食材丰富，咸鲜适口",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D107",
+          "dish_name": "酸辣鸡杂",
+          "price": 30,
+          "unit": "份",
+          "description": "酸辣开胃，口感脆嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D108",
+          "dish_name": "莴笋炒肉",
+          "price": 26,
+          "unit": "份",
+          "description": "莴笋脆爽，肉片鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D109",
+          "dish_name": "豆角炒肉",
+          "price": 26,
+          "unit": "份",
+          "description": "豆角软糯，咸香入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D110",
+          "dish_name": "芹菜炒肉",
+          "price": 24,
+          "unit": "份",
+          "description": "芹菜脆香，家常口味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D111",
+          "dish_name": "杏鲍菇炒肉",
+          "price": 26,
+          "unit": "份",
+          "description": "菌香浓郁，口感劲道",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D112",
+          "dish_name": "酸菜炒肉",
+          "price": 24,
+          "unit": "份",
+          "description": "酸菜解腻，咸香下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D113",
+          "dish_name": "爆炒猪肝",
+          "price": 28,
+          "unit": "份",
+          "description": "鲜嫩无腥，猛火快炒",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D114",
+          "dish_name": "京酱肉丝",
+          "price": 32,
+          "unit": "份",
+          "description": "咸甜酱香，配薄饼食用",
+          "support_remark": true,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "category_id": 3,
+      "category_name": "爽口素炒菜",
+      "dishes": [
+        {
+          "dish_id": "D201",
+          "dish_name": "酸辣土豆丝",
+          "price": 14,
+          "unit": "份",
+          "description": "爽脆解腻，酸辣开胃",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D202",
+          "dish_name": "手撕包菜",
+          "price": 14,
+          "unit": "份",
+          "description": "猛火快炒，咸香微辣",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D203",
+          "dish_name": "蒜蓉空心菜",
+          "price": 14,
+          "unit": "份",
+          "description": "蒜香浓郁，口感脆嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D204",
+          "dish_name": "油淋茄子",
+          "price": 18,
+          "unit": "份",
+          "description": "软嫩入味，酱汁浓郁",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D205",
+          "dish_name": "西红柿炒鸡蛋",
+          "price": 16,
+          "unit": "份",
+          "description": "酸甜家常，老少皆宜",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D206",
+          "dish_name": "地三鲜",
+          "price": 20,
+          "unit": "份",
+          "description": "软糯鲜香，咸香入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D207",
+          "dish_name": "苦瓜炒鸡蛋",
+          "price": 18,
+          "unit": "份",
+          "description": "清热解腻，家常口味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D208",
+          "dish_name": "韭菜炒鸡蛋",
+          "price": 16,
+          "unit": "份",
+          "description": "鲜香可口，快手家常菜",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D209",
+          "dish_name": "蒜蓉油麦菜",
+          "price": 14,
+          "unit": "份",
+          "description": "脆嫩爽口，蒜香十足",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D210",
+          "dish_name": "干煸四季豆",
+          "price": 20,
+          "unit": "份",
+          "description": "干香入味，脆嫩不柴",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D211",
+          "dish_name": "清炒西兰花",
+          "price": 18,
+          "unit": "份",
+          "description": "清淡健康，蒜香调味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D212",
+          "dish_name": "麻婆豆腐",
+          "price": 18,
+          "unit": "份",
+          "description": "麻辣鲜香，嫩滑下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D213",
+          "dish_name": "清炒白菜",
+          "price": 12,
+          "unit": "份",
+          "description": "清淡爽口，家常做法",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D214",
+          "dish_name": "炒藕片",
+          "price": 16,
+          "unit": "份",
+          "description": "脆嫩爽口，咸香入味",
+          "support_remark": true,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "category_id": 4,
+      "category_name": "营养汤品类",
+      "dishes": [
+        {
+          "dish_id": "D301",
+          "dish_name": "紫菜蛋花汤",
+          "price": 12,
+          "unit": "份",
+          "description": "清淡快手，解辣解腻",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D302",
+          "dish_name": "西红柿蛋汤",
+          "price": 12,
+          "unit": "份",
+          "description": "酸甜开胃，家常口味",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D303",
+          "dish_name": "冬瓜排骨汤",
+          "price": 32,
+          "unit": "份",
+          "description": "清甜滋补，排骨软烂",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D304",
+          "dish_name": "玉米排骨汤",
+          "price": 32,
+          "unit": "份",
+          "description": "清甜鲜香，营养滋补",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D305",
+          "dish_name": "三鲜汤",
+          "price": 20,
+          "unit": "份",
+          "description": "鲜爽开胃，食材丰富",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D306",
+          "dish_name": "豆腐青菜汤",
+          "price": 12,
+          "unit": "份",
+          "description": "清淡爽口，解腻必备",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D307",
+          "dish_name": "榨菜肉丝汤",
+          "price": 16,
+          "unit": "份",
+          "description": "咸鲜开胃，快手汤品",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D308",
+          "dish_name": "菌菇汤",
+          "price": 24,
+          "unit": "份",
+          "description": "鲜香浓郁，清淡健康",
+          "support_remark": false,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "category_id": 5,
+      "category_name": "江西特色菜",
+      "dishes": [
+        {
+          "dish_id": "D401",
+          "dish_name": "余干辣椒炒肉",
+          "price": 36,
+          "unit": "份",
+          "description": "江西经典下饭菜，鲜辣开胃",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D402",
+          "dish_name": "藜蒿炒腊肉",
+          "price": 42,
+          "unit": "份",
+          "description": "藜蒿清香，腊肉咸香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D403",
+          "dish_name": "南昌拌粉",
+          "price": 16,
+          "unit": "份",
+          "description": "酱香微辣，爽滑筋道",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D404",
+          "dish_name": "瓦罐肉饼汤",
+          "price": 18,
+          "unit": "份",
+          "description": "汤清味鲜，肉饼细嫩",
+          "support_remark": false,
+          "status": 1
+        },
+        {
+          "dish_id": "D405",
+          "dish_name": "啤酒鸭",
+          "price": 48,
+          "unit": "份",
+          "description": "鸭肉入味，酱香微辣",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D406",
+          "dish_name": "井冈山烟笋烧肉",
+          "price": 46,
+          "unit": "份",
+          "description": "烟笋脆嫩，五花肉浓香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D407",
+          "dish_name": "鄱阳湖小鱼干",
+          "price": 34,
+          "unit": "份",
+          "description": "小鱼干香辣酥香，下饭过瘾",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D408",
+          "dish_name": "赣南小炒鱼",
+          "price": 46,
+          "unit": "份",
+          "description": "鱼肉滑嫩，酸辣鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D409",
+          "dish_name": "萍乡莲花血鸭",
+          "price": 58,
+          "unit": "份",
+          "description": "赣西名菜，鲜辣浓郁",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D410",
+          "dish_name": "三杯鸡",
+          "price": 42,
+          "unit": "份",
+          "description": "酱香浓郁，鸡肉鲜嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D411",
+          "dish_name": "南昌炒粉",
+          "price": 18,
+          "unit": "份",
+          "description": "锅气足，咸香微辣",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D412",
+          "dish_name": "辣椒炒荷包蛋",
+          "price": 22,
+          "unit": "份",
+          "description": "焦香荷包蛋配青椒，简单下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D413",
+          "dish_name": "腊味合蒸",
+          "price": 52,
+          "unit": "份",
+          "description": "腊肉腊肠咸香浓郁",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D414",
+          "dish_name": "酸豆角炒肉末",
+          "price": 26,
+          "unit": "份",
+          "description": "酸辣开胃，拌饭很香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D415",
+          "dish_name": "农家一碗香",
+          "price": 32,
+          "unit": "份",
+          "description": "鸡蛋肉片青椒同炒，家常下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D416",
+          "dish_name": "剁椒鱼头",
+          "price": 68,
+          "unit": "份",
+          "description": "剁椒鲜辣，鱼头鲜嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D417",
+          "dish_name": "干锅茶树菇",
+          "price": 36,
+          "unit": "份",
+          "description": "菌香浓郁，干香微辣",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D418",
+          "dish_name": "粉蒸肉",
+          "price": 38,
+          "unit": "份",
+          "description": "米粉软糯，肉香浓厚",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D419",
+          "dish_name": "梅干菜扣肉",
+          "price": 42,
+          "unit": "份",
+          "description": "肥而不腻，梅干菜咸香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D420",
+          "dish_name": "辣炒田螺",
+          "price": 38,
+          "unit": "份",
+          "description": "香辣入味，夜宵风味",
+          "support_remark": true,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "category_id": 6,
+      "category_name": "江西小炒下饭菜",
+      "dishes": [
+        {
+          "dish_id": "D501",
+          "dish_name": "小炒黄牛肉",
+          "price": 48,
+          "unit": "份",
+          "description": "牛肉鲜嫩，香辣下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D502",
+          "dish_name": "辣椒炒拆骨肉",
+          "price": 42,
+          "unit": "份",
+          "description": "拆骨肉软嫩，辣香足",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D503",
+          "dish_name": "香辣猪脚",
+          "price": 46,
+          "unit": "份",
+          "description": "猪脚软糯，香辣浓口",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D504",
+          "dish_name": "干锅肥肠",
+          "price": 48,
+          "unit": "份",
+          "description": "肥肠焦香，干锅风味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D505",
+          "dish_name": "酸辣腰花",
+          "price": 42,
+          "unit": "份",
+          "description": "腰花脆嫩，酸辣爽口",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D506",
+          "dish_name": "泡椒牛蛙",
+          "price": 58,
+          "unit": "份",
+          "description": "泡椒酸辣，牛蛙鲜嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D507",
+          "dish_name": "香辣鸡爪",
+          "price": 36,
+          "unit": "份",
+          "description": "软糯脱骨，越啃越香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D508",
+          "dish_name": "青椒皮蛋",
+          "price": 18,
+          "unit": "份",
+          "description": "青椒微辣，皮蛋鲜香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D509",
+          "dish_name": "香煎豆腐",
+          "price": 22,
+          "unit": "份",
+          "description": "外香里嫩，酱汁入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D510",
+          "dish_name": "擂辣椒茄子",
+          "price": 22,
+          "unit": "份",
+          "description": "软糯香辣，乡土风味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D511",
+          "dish_name": "外婆菜炒蛋",
+          "price": 24,
+          "unit": "份",
+          "description": "咸香开胃，鸡蛋嫩香",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D512",
+          "dish_name": "干锅千叶豆腐",
+          "price": 28,
+          "unit": "份",
+          "description": "豆腐弹嫩，香辣入味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D513",
+          "dish_name": "酸辣萝卜皮",
+          "price": 16,
+          "unit": "份",
+          "description": "脆爽酸辣，解腻小菜",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D514",
+          "dish_name": "红烧鳝段",
+          "price": 58,
+          "unit": "份",
+          "description": "鳝段鲜香，酱汁浓郁",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D515",
+          "dish_name": "香辣虾",
+          "price": 58,
+          "unit": "份",
+          "description": "虾肉弹嫩，香辣过瘾",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D516",
+          "dish_name": "干锅花菜",
+          "price": 24,
+          "unit": "份",
+          "description": "花菜干香，微辣下饭",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D517",
+          "dish_name": "酸辣白菜梗",
+          "price": 16,
+          "unit": "份",
+          "description": "酸辣脆爽，家常开胃",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D518",
+          "dish_name": "荷塘小炒",
+          "price": 26,
+          "unit": "份",
+          "description": "藕片木耳荷兰豆，清爽脆嫩",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D519",
+          "dish_name": "剁椒蒸芋头",
+          "price": 22,
+          "unit": "份",
+          "description": "芋头粉糯，剁椒提味",
+          "support_remark": true,
+          "status": 1
+        },
+        {
+          "dish_id": "D520",
+          "dish_name": "肉末粉丝煲",
+          "price": 28,
+          "unit": "份",
+          "description": "粉丝入味，肉末咸香",
+          "support_remark": true,
+          "status": 1
+        }
+      ]
+    }
+  ],
+  "usage_instructions": [
+    {
+      "title": "每日菜单配置",
+      "content": "管理员从菜品库中勾选 6 道菜品。推荐搭配为 2 道大荤、2 道半荤、2 道素菜，可按需替换 1 道为汤品。设置点餐截止时间后一键发布，员工端仅显示当日 6 道可选菜品。"
+    },
+    {
+      "title": "员工点餐流程",
+      "content": "员工选择各菜品的点餐数量，填写忌口或口味备注，在截止时间前提交即可。"
+    },
+    {
+      "title": "汇总报单",
+      "content": "点餐截止后，系统自动统计每道菜的总份数与总金额，可一键导出 Excel 表格，直接发给饭店对接人下单。"
+    },
+    {
+      "title": "轮换参考",
+      "content": "菜品库可支撑 3-4 周不重样，建议每周更新一次菜单组合，避免饮食疲劳。"
+    }
+  ],
+  "weekly_menu_examples": [
+    {
+      "weekday": "周一",
+      "selected_dish_ids": ["D001", "D010", "D101", "D102", "D201", "D209"],
+      "dishes": ["红烧肉", "宫保鸡丁", "鱼香肉丝", "青椒炒肉", "酸辣土豆丝", "蒜蓉油麦菜"]
+    },
+    {
+      "weekday": "周二",
+      "selected_dish_ids": ["D003", "D005", "D103", "D104", "D205", "D202"],
+      "dishes": ["红烧排骨", "香菇滑鸡", "木耳炒肉", "蒜苔炒肉", "西红柿炒鸡蛋", "手撕包菜"]
+    },
+    {
+      "weekday": "周三",
+      "selected_dish_ids": ["D004", "D012", "D105", "D106", "D211", "D214"],
+      "dishes": ["可乐鸡翅", "红烧鸡块", "香干炒肉", "木须肉", "清炒西兰花", "炒藕片"]
+    },
+    {
+      "weekday": "周四",
+      "selected_dish_ids": ["D002", "D009", "D109", "D110", "D206", "D203"],
+      "dishes": ["糖醋里脊", "回锅肉", "豆角炒肉", "芹菜炒肉", "地三鲜", "蒜蓉空心菜"]
+    },
+    {
+      "weekday": "周五",
+      "selected_dish_ids": ["D006", "D011", "D107", "D111", "D212", "D208"],
+      "dishes": ["土豆炖牛肉", "红烧鱼块", "酸辣鸡杂", "杏鲍菇炒肉", "麻婆豆腐", "韭菜炒鸡蛋"]
+    },
+    {
+      "weekday": "周六",
+      "selected_dish_ids": ["D007", "D008", "D108", "D112", "D204", "D210"],
+      "dishes": ["水煮肉片", "酸菜鱼", "莴笋炒肉", "酸菜炒肉", "油淋茄子", "干煸四季豆"]
+    }
+  ],
+  "daily_menu_template": {
+    "date": "",
+    "order_deadline": "10:00",
+    "selected_dish_ids": [],
+    "remark": ""
+  },
+  "order_summary_template": {
+    "date": "",
+    "dish_total_list": [],
+    "total_amount": 0,
+    "export_status": "未导出"
+  }
+}

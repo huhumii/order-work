@@ -1,0 +1,13 @@
+services:
+  order-work:
+    build: .
+    image: order-work:latest
+    container_name: order-work
+    ports:
+      - "5173:80"
+    volumes:
+      - order-work-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  order-work-data:

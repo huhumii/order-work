@@ -1,1 +1,47 @@
-# order-work
+# 企业午餐点餐系统
+
+企业午餐点餐系统，支持员工点餐、桌台单、管理员菜品维护和报单汇总。
+
+Docker 版本内置 Python 标准库后端 API，并使用 SQLite 持久化保存菜单、菜品库和订单状态。
+
+## Docker 运行
+
+```bash
+docker compose up -d --build
+```
+
+打开：
+
+```text
+http://localhost:5173
+```
+
+停止：
+
+```bash
+docker compose down
+```
+
+## 管理员
+
+管理员密码：
+
+```text
+Wu123456
+```
+
+## 说明
+
+数据保存在 Docker volume `order-work-data` 中的 SQLite 数据库里。浏览器本地缓存只作为离线兜底。
+
+API 健康检查：
+
+```text
+http://localhost:5173/api/health
+```
+
+状态接口：
+
+```text
+http://localhost:5173/api/state
+```
