@@ -22,6 +22,12 @@ http://localhost:3880
 docker compose down
 ```
 
+查看健康状态：
+
+```bash
+docker compose ps
+```
+
 ## 管理员
 
 管理员密码：
@@ -33,6 +39,8 @@ Wu123456
 ## 说明
 
 数据保存在 Docker volume `order-work-data` 中的 SQLite 数据库里。浏览器本地缓存只作为离线兜底。
+
+员工端会定时检查桌台单更新。员工正在填写姓名、部门或备注时，系统会提示刷新，不会直接打断输入。
 
 API 健康检查：
 
