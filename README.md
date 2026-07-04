@@ -13,7 +13,7 @@ docker compose up -d --build
 打开：
 
 ```text
-http://localhost:5173
+http://localhost:3880
 ```
 
 停止：
@@ -37,11 +37,11 @@ Wu123456
 API 健康检查：
 
 ```text
-http://localhost:5173/api/health
+http://localhost:3880/api/health
 ```
 
 状态接口：
 
 ```text
-http://localhost:5173/api/state
+http://localhost:3880/api/state
 ```
